@@ -86,8 +86,12 @@ function wrap(func){
   func();
 }
 
-function loadjQuery(){
+function loadjQuery() {
   document.getElementsByTagName('head').innerHTML += "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
+}
+
+function loadScript(url) {
+  document.getElementsByTagName('head').innerHTML += "<script src='" + url + "'></script>";
 }
 
 class Random {
