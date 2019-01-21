@@ -82,7 +82,7 @@ function wrap(func){
 }
 
 function loadJQuery(){
-  document.getElementsByTagName('head').innerHTML += "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>";
+  document.getElementsByTagName('head').innerHTML += "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
 }
 
 class Random {
