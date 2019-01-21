@@ -1,7 +1,7 @@
 /**
   Credits:
   N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
-  Number.prototype.A, Number.prototype.times, localStore
+  Number.prototype.A, Number.prototype.times, localStore, wrap, loadQuery
   user113716 - String.prototype.splice
   Ghostoy - commmafy
   Lavamantis - Number.prototype.round
@@ -79,6 +79,10 @@ function localStore(varname, val) {
 
 function wrap(func){
   func();
+}
+
+function loadJQuery(){
+  document.getElementsByTagName('head').innerHTML += "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>";
 }
 
 class Random {
