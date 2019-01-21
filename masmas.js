@@ -1,7 +1,7 @@
 /**
   Credits:
   N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
-  Numebr.prototype.A, Number.prototype.times, localStore
+  Number.prototype.A, Number.prototype.times, localStore
   user113716 - String.prototype.splice
   Ghostoy - commmafy
   Lavamantis - Number.prototype.round
