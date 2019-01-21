@@ -82,7 +82,7 @@ function localStore(varname, val) {
   }, 1)
 }
 
-function wrap(func){
+function wrap(func) {
   func();
 }
 
@@ -115,7 +115,7 @@ Number.prototype.round = function(places) {
   return +(Math.round(this + "e+" + places)  + "e-" + places);
 }
 
-Number.prototype.A = function(){
+Number.prototype.A = function() {
   var str = String(this.valueOf());
   if(str.includes("000")) {
     return Number((this.valueOf()).toFixed(str.indexOf("000")));
@@ -126,12 +126,13 @@ Number.prototype.A = function(){
   return this.valueOf()
 }
 
-Number.prototype.times = function(func){
+Number.prototype.times = function(func) {
   for(var i = 0; i < this.valueOf(); i++){
     func();
   }
 }
-//Canvas.masmas.js
+
+// Canvas.masmas.js
 function canvasSetup(){
   window.canvas = document.getElementById("canvas");
   window.ctx = canvas.getContext('2d')
