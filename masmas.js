@@ -1,10 +1,11 @@
 /**
   Credits:
   N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
-  Number.prototype.A, Number.prototype.times, localStore, wrap, loadjQuery
+  Number.prototype.A, Number.prototype.times, localStore, wrap, loadjQuery, MasMasCanvas
   user113716 - String.prototype.splice
   Ghostoy - commmafy
   Lavamantis - Number.prototype.round
+  RDIL - Fix loadjQuery
   // Insert your username and functions you contribute up here.
 **/
 
@@ -124,5 +125,32 @@ Number.prototype.A = function(){
 Number.prototype.times = function(func){
   for(var i = 0; i < this.valueOf(); i++){
     func();
+  }
+}
+//Canvas.masmas.js
+function canvasSetup(){
+  window.canvas = document.getElementById("canvas");
+  window.ctx = canvas.getContext('2d')
+}
+class MasMasCanvas {
+  constructor(ctx){
+    this.ctx = ctx;
+  }
+  get c(){
+    return this.ctx;
+  }
+  fill(fillStyle){
+    this.ctx.fillStyle = fillStyle;
+  }
+  rect(x, y, width, height){
+    this.ctx.fillRect(x, y, width, height);
+  }
+  ellipse(x, y, width, height){
+    ctx.beginPath();
+    ctx.ellipse(x, y, width, height, 0, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+  text(text, x, y){
+    this.ctx.fillText(text, x, y)
   }
 }
