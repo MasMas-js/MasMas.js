@@ -36,11 +36,6 @@ function execute(times, func) {
     func();
   }
 }
-
-function globalVar(varname, val) {
-  window[varname] = val;
-}
-
 function exists(thing){
   if(thing !== undefined && thing !== null) {
     return true;
@@ -48,6 +43,12 @@ function exists(thing){
   return false;
 }
 
+function globalVar(varname, val) {
+  if(!exists(window[varname]){
+     window[varname] = val;
+  }
+}
+     
 function commafy(num) {
     var str = num.toString().split('.');
     if (str[0].length >= 5) {
