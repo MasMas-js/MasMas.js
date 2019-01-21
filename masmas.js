@@ -7,6 +7,7 @@
   Lavamantis - Number.prototype.round
   // Insert your username and functions you contribute up here.
 **/
+
 function isFloat(n) {
   return n === +n && n !== (n | 0);
 }
@@ -59,6 +60,7 @@ function commafy(num) {
 
 function localStore(varname, val) {
   if (!exists(localStorage[varname])) { localStorage[varname] = val; }
+  
   if (typeof val === "number") {
     window[varname] = Number(localStorage[varname]);
   } else if (typeof val === "boolean") {
@@ -99,7 +101,7 @@ class Random {
 }
 
 String.prototype.splice = function(idx, rem, str) {
-    return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+  return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
 }
 
 Number.prototype.round = function(places) {
@@ -119,6 +121,6 @@ Number.prototype.A = function(){
 
 Number.prototype.times = function(func){
     for(var i = 0; i < this.valueOf(); i++){
-        func();
+      func();
     }
 }
