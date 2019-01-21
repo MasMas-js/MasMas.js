@@ -72,6 +72,11 @@ function localStore(varname, val) {
     }
   }, 1)
 }
+
+function wrap(func){
+  func();
+}
+
 class Random {
   constructor() {}
   getRandomFloat(min, max) {
