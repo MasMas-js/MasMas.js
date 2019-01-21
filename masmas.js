@@ -111,7 +111,7 @@ String.prototype.splice = function(idx, rem, str) {
   return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
 }
 
-Number.prototype.round = function(places) {
+Number.prototype.round = function(places=0) {
   return +(Math.round(this + "e+" + places)  + "e-" + places);
 }
 
