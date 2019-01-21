@@ -88,14 +88,16 @@ function localStore(varname, val) {
 function wrap(func) {
   func();
 }
-//Don't work (loadjQuery + loadScript)
-function loadjQuery() {
-  document.head.innerHTML += "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
-}
 
-function loadScript(url) {
-  document.head.innerHTML += "<script src='" + url + "'></script>";
-}
+// BROKEN DON'T USE (loadjQuery + loadScript)
+//TODO: Fix functions
+//function loadjQuery() {
+//  document.head.innerHTML += "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
+//}
+//
+//function loadScript(url) {
+//  document.head.innerHTML += "<script src='" + url + "'></script>";
+//}
 
 class Random {
   constructor() {}
