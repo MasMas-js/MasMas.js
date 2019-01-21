@@ -35,12 +35,12 @@ function execute(times, func) {
   }
 }
 
-function globalVar(varname, val){
+function globalVar(varname, val) {
   window[varname] = val;
 }
 
 function exists(thing){
-  if(thing !== undefined && thing !== null){
+  if(thing !== undefined && thing !== null) {
     return true;
   }
   return false;
@@ -58,7 +58,7 @@ function commafy(num) {
 }
 
 function localStore(varname, val) {
-  if (!exists(localStorage[varname])) localStorage[varname] = val;
+  if (!exists(localStorage[varname])) { localStorage[varname] = val; }
   if (typeof val === "number") {
     window[varname] = Number(localStorage[varname]);
   } else if (typeof val === "boolean") {
@@ -97,12 +97,15 @@ class Random {
     return Math.random() >= 0.5;
   }
 }
+
 String.prototype.splice = function(idx, rem, str) {
     return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
 }
+
 Number.prototype.round = function(places) {
   return +(Math.round(this + "e+" + places)  + "e-" + places);
 }
+
 Number.prototype.A = function(){
   var str = String(this.valueOf());
   if(str.includes("000")){
@@ -113,6 +116,7 @@ Number.prototype.A = function(){
   }
   return this.valueOf()
 }
+
 Number.prototype.times = function(func){
     for(var i = 0; i < this.valueOf(); i++){
         func();
