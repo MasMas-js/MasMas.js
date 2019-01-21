@@ -44,7 +44,7 @@ function exists(thing){
 }
 
 function globalVar(varname, val) {
-  if(!exists(window[varname]){
+  if(!exists(window[varname])){
      window[varname] = val;
   } else {
     throw new Error("Variable already exists!");
