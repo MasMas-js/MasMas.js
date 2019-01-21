@@ -1,7 +1,7 @@
 /**
   Credits:
   N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
-  Number.prototype.A, Number.prototype.times, localStore, wrap, loadQuery
+  Number.prototype.A, Number.prototype.times, localStore, wrap, loadjQuery
   user113716 - String.prototype.splice
   Ghostoy - commmafy
   Lavamantis - Number.prototype.round
@@ -59,7 +59,9 @@ function commafy(num) {
 }
 
 function localStore(varname, val) {
-  if (!exists(localStorage[varname])) { localStorage[varname] = val; }
+  if (!exists(localStorage[varname])) {
+    localStorage[varname] = val;
+  }
   
   if (typeof val === "number") {
     window[varname] = Number(localStorage[varname]);
@@ -83,7 +85,7 @@ function wrap(func){
   func();
 }
 
-function loadJQuery(){
+function loadjQuery(){
   document.getElementsByTagName('head').innerHTML += "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
 }
 
@@ -110,17 +112,17 @@ Number.prototype.round = function(places) {
 
 Number.prototype.A = function(){
   var str = String(this.valueOf());
-  if(str.includes("000")){
+  if(str.includes("000")) {
     return Number((this.valueOf()).toFixed(str.indexOf("000")));
   }
-  if(str.includes("999")){
+  if(str.includes("999")) {
     return Number((this.valueOf()).round(str.indexOf("999")));
   }
   return this.valueOf()
 }
 
 Number.prototype.times = function(func){
-    for(var i = 0; i < this.valueOf(); i++){
-      func();
-    }
+  for(var i = 0; i < this.valueOf(); i++){
+    func();
+  }
 }
