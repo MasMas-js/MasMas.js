@@ -5,7 +5,7 @@
   user113716 - String.prototype.splice
   Ghostoy - commmafy
   Lavamantis - Number.prototype.round
-  //Insert your username and functions you contribute up here.
+  // Insert your username and functions you contribute up here.
 **/
 function isFloat(n) {
   return n === +n && n !== (n | 0);
@@ -34,15 +34,18 @@ function execute(times, func) {
     func();
   }
 }
+
 function globalVar(varname, val){
   window[varname] = val;
 }
+
 function exists(thing){
   if(thing !== undefined && thing !== null){
     return true;
   }
   return false;
 }
+
 function commafy(num) {
     var str = num.toString().split('.');
     if (str[0].length >= 5) {
@@ -53,6 +56,7 @@ function commafy(num) {
     }
     return str.join('.');
 }
+
 function localStore(varname, val) {
   if (!exists(localStorage[varname])) localStorage[varname] = val;
   if (typeof val === "number") {
