@@ -53,11 +53,23 @@ function commafy(num) {
     }
     return str.join('.');
 }
-function localStore(varname, val){
-  if(!localStorage[varname]) localStorage[varname] = val;
-  window[varname] = val;
-  setInterval(()=>{
-    localStorage[varname] = window[varname];
+function localStore(varname, val) {
+  if (!exists(localStorage[varname])) localStorage[varname] = val;
+  if (typeof val === "number") {
+    window[varname] = Number(localStorage[varname]);
+  } else if (typeof val === "boolean") {
+    window[varname] = Boolean(localStorage[varname]);
+  } else {
+    window[varname] = localStorage[varname];
+  }
+  setInterval(() => {
+    if (typeof val === "number") {
+      localStorage[varname] = Number(window[varname]);
+    } else if (typeof val === "boolean") {
+      localStorage[varname] = Boolean(window[varname]);
+    } else {
+      localStorage[varname] = window[varname];
+    }
   }, 1)
 }
 String.prototype.splice = function(idx, rem, str) {
