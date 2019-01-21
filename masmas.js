@@ -72,6 +72,18 @@ function localStore(varname, val) {
     }
   }, 1)
 }
+class Random {
+  constructor() {}
+  getRandomFloat(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+  getRandomBool() {
+    return Math.random() >= 0.5;
+  }
+}
 String.prototype.splice = function(idx, rem, str) {
     return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
 }
