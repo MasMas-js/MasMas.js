@@ -6,12 +6,12 @@ dist: trusty
 install:
   - "npm i"
 matrix:
-  allow_failures:
-    - nodejs: node
-matrix:
   include:
   - nodejs: node
-    env: main=true
-script: "eslint masmas.js"
+    env: task=main
+    script: "eslint masmas.js"
+  - nodejs: 9
+    env: task=linkcheck
+    script: "find . -name \*.md -exec markdown-link-check {} \;"
 notifications:
   email: false
