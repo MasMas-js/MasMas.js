@@ -1,15 +1,16 @@
 /**
-  Credits:
-  N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
-  Number.prototype.A, Number.prototype.times, localStore, wrap, loadjQuery, MasMasCanvas, type
-  user113716 - String.prototype.splice
-  Ghostoy - commmafy
-  Lavamantis - Number.prototype.round
-  RDIL - Fix loadjQuery
-  Sam Deering - loadScript
-  kieranpotts - isPrimitive
-  // Insert your username and functions you contribute up here.
-**/
+  * Credits:
+  * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
+  * Number.prototype.A, Number.prototype.times, localStore, 
+  * wrap, MasMasCanvas, type
+  * ~ user113716 - String.prototype.splice
+  * ~ Ghostoy - commmafy
+  * ~ Lavamantis - Number.prototype.round
+  * ~ RDIL - Fix loadjQuery
+  * ~ Sam Deering - loadScript
+  * ~ kieranpotts - isPrimitive
+  * [{ Insert your username and functions you contribute up here. }]
+  */
 
 function isFloat(n) {
   return n === +n && n !== (n | 0);
@@ -20,17 +21,17 @@ function isInteger(n) {
 }
 
 function Int(n) {
-  if (typeof n === "number" && n <= 9223372036854775807 && n >= -9223372036854775807 && n % 1 === 0) {
+  if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && n % 1 === 0) {
     return n;
   }
-  throw new Error("TypeExceptionError: Value passed not an integer");
+  throw new Error('TypeExceptionError: Value passed not an integer');
 }
 
 function Float(n) {
-  if (typeof n === "number" && n <= 9223372036854775807 && n >= -9223372036854775807 && isFloat(n)) {
+  if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && isFloat(n)) {
     return n;
   }
-  throw new Error("TypeExceptionError: Value passed not a float");
+  throw new Error('TypeExceptionError: Value passed not a float');
 }
 
 function execute(times, func) {
@@ -38,46 +39,47 @@ function execute(times, func) {
     func();
   }
 }
-function exists(thing){
-  if(thing !== undefined && thing !== null) {
+
+function exists(thing) {
+  if (thing !== undefined && thing !== null) {
     return true;
   }
   return false;
 }
 
 function globalVar(varname, val) {
-  if(!exists(window[varname])){
+  if (!exists(window[varname])) {
      window[varname] = val;
   } else {
-    throw new Error("Variable already exists!");
+    throw new Error('Variable already exists!');
   }
 }
-     
+
 function commafy(num) {
-    var str = num.toString().split('.');
-    if (str[0].length >= 5) {
-        str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
-    }
-    if (str[1] && str[1].length >= 5) {
-        str[1] = str[1].replace(/(\d{3})/g, '$1 ');
-    }
-    return str.join('.');
+  var str = num.toString().split('.');
+  if (str[0].length >= 5) {
+    str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+  }
+  if (str[1] && str[1].length >= 5) {
+    str[1] = str[1].replace(/(\d{3})/g, '$1 ');
+  }
+  return str.join('.');
 }
 
 function localStore(varname, val) {
   if (!exists(localStorage[varname])) {
     localStorage[varname] = val;
   }
-  
-  if (typeof val === "number") {
+  if (typeof val === 'number') {
     window[varname] = Number(localStorage[varname]);
-  } else if (typeof val === "boolean") {
+  } else if (typeof val === 'boolean') {
     window[varname] = Boolean(localStorage[varname]);
   } else {
     window[varname] = localStorage[varname];
   }
+  
   setInterval(() => {
-    if (typeof val === "number") {
+    if (typeof val === 'number') {
       localStorage[varname] = Number(window[varname]);
     } else if (typeof val === "boolean") {
       localStorage[varname] = Boolean(window[varname]);
@@ -91,12 +93,12 @@ function wrap(func) {
   func();
 }
 
-function loadScript(url, callback) {
-  var script = document.createElement("script")
+function loadScript (url, callback) {
+  var script = document.createElement("script");
   script.type = "text/javascript";
   if (script.readyState) { // IE
-    script.onreadystatechange = function () {
-      if (script.readyState == "loaded" || script.readyState == "complete") {
+    script.onreadystatechange = function() {
+      if (script.readyState == 'loaded' || script.readyState == 'complete') {
         script.onreadystatechange = null;
         callback();
       }
@@ -110,16 +112,15 @@ function loadScript(url, callback) {
   document.getElementsByTagName("head")[0].appendChild(script);
 }
 
-
 function loadjQuery(callback) {
-  loadScript("https://code.jquery.com/jquery-3.3.1.min.js", callback);
+  loadScript('https://code.jquery.com/jquery-3.3.1.min.js', callback);
 }
 
-function isPrimitive(test) {
-    return (test !== Object(test));
+function isPrimitive (test) {
+  return (test !== Object(test));
 };
 
-function type(thing){
+function type (thing) {
 	return typeof thing;
 }
 
@@ -141,39 +142,39 @@ String.prototype.splice = function(idx, rem, str) {
 }
 
 Number.prototype.round = function(places=0) {
-  return +(Math.round(this + "e+" + places)  + "e-" + places);
+  return +(Math.round(this + 'e+' + places)  + 'e-' + places);
 }
 
 Number.prototype.A = function() {
   var str = String(this.valueOf());
-  if(str.includes("000")) {
-    return Number((this.valueOf()).toFixed(str.indexOf("000")));
+  if (str.includes('000')) {
+    return Number((this.valueOf()).toFixed(str.indexOf('000')));
   }
-  if(str.includes("999")) {
-    return Number((this.valueOf()).round(str.indexOf("999")));
+  if (str.includes("999")) {
+    return Number((this.valueOf()).round(str.indexOf('999')));
   }
-  return this.valueOf()
+  return this.valueOf();
 }
 
 Number.prototype.times = function(func) {
-  for(var i = 0; i < this.valueOf(); i++){
+  for(var i = 0; i < this.valueOf(); i++) {
     func();
   }
 }
 
 // Canvas.masmas.js
 function canvasSetup() {
-  window.canvas = document.getElementById("canvas");
-  window.ctx = canvas.getContext('2d')
+  window.canvas = document.getElementById('canvas');
+  window.ctx = canvas.getContext('2d');
 }
 class MasMasCanvas {
-  constructor(ctx){
+  constructor(ctx) {
     this.ctx = ctx;
   }
-  get c(){
+  get c() {
     return this.ctx;
   }
-  fill(fillStyle){
+  fill(fillStyle) {
     this.ctx.fillStyle = fillStyle;
   }
   rect(x, y, width, height) {
@@ -185,6 +186,6 @@ class MasMasCanvas {
     ctx.fill();
   }
   text(text, x, y) {
-    this.ctx.fillText(text, x, y)
+    this.ctx.fillText(text, x, y);
   }
 }
