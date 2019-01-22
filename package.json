@@ -1,0 +1,27 @@
+{
+  "name": "masmas",
+  "version": "1.0.0",
+  "description": "MasMas.js!",
+  "main": "MasMas.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MasMas-js/MasMas.js.git"
+  },
+  "keywords": [
+    "masmas",
+    "js",
+    "utilities"
+  ],
+  "author": "RDIL/N8programs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MasMas-js/MasMas.js/issues"
+  },
+  "homepage": "https://github.com/MasMas-js/MasMas.js#readme"
+}
