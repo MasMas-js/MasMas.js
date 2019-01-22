@@ -148,11 +148,11 @@ Number.prototype.round = function (places=0) {
 
 Number.prototype.A = function () {
   var str = String(this.valueOf());
-  if (str.includes('000)) {
-    return Number((this.valueOf()).toFixed(str.indexOf("000")));
+  if (str.includes('000')) {
+    return Number((this.valueOf()).toFixed(str.indexOf('000')));
   }
   if (str.includes("999")) {
-    return Number((this.valueOf()).round(str.indexOf("999")));
+    return Number((this.valueOf()).round(str.indexOf('999')));
   }
   return this.valueOf()
 }
