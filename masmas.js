@@ -133,14 +133,16 @@ function type(thing) {
 class Random {
   constructor() {}
   genCharArray(charA, charZ) {
-    var a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
+    var a = [];
+    i = charA.charCodeAt(0);
+    j = charZ.charCodeAt(0);
     for (; i <= j; ++i) {
       a.push(String.fromCharCode(i));
     }
     return a;
   }
   getRandomNumber(min, max, float=false) {
-    if(float){
+    if (float){
       return Math.random() * (max - min) + min;
     } else {
       return Math.floor(Math.random() * (max - min + 1) + min);          
