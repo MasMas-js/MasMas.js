@@ -11,49 +11,52 @@
   // Insert your username and functions you contribute up here.
 **/
 
-function isFloat(n) {
+// eslint-disable-next-line
+function isFloat (n) {
   return n === +n && n !== (n | 0)
 }
 
-function isInteger(n) {
+// eslint-disable-next-line
+function isInteger (n) {
   return n === +n && n === (n | 0)
 }
 
-function Int(n) {
+// eslint-disable-next-line
+function Int (n) {
   if (typeof n === "number" && n <= 9223372036854775807 && n >= -9223372036854775807 && n % 1 === 0) {
     return n;
   }
   throw new Error("TypeExceptionError: Value passed not an integer");
 }
 
-function Float(n) {
+function Float (n) {
   if (typeof n === "number" && n <= 9223372036854775807 && n >= -9223372036854775807 && isFloat(n)) {
     return n;
   }
   throw new Error("TypeExceptionError: Value passed not a float");
 }
 
-function execute(times, func) {
+function execute (times, func) {
   for (var i = 0; i < times; i++) {
     func();
   }
 }
-function exists(thing){
+function exists (thing) {
   if (thing !== undefined && thing !== null) {
     return true;
   }
   return false;
 }
 
-function globalVar(varname, val) {
-  if (!exists(window[varname])){
+function globalVar (varname, val) {
+  if (!exists(window[varname])) {
      window[varname] = val;
   } else {
     throw new Error("Variable already exists!");
   }
 }
      
-function commafy(num) {
+function commafy (num) {
     var str = num.toString().split('.');
     if (str[0].length >= 5) {
         str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
@@ -64,7 +67,7 @@ function commafy(num) {
     return str.join('.');
 }
 
-function localStore(varname, val) {
+function localStore (varname, val) {
   if (!exists(localStorage[varname])) {
     localStorage[varname] = val;
   }
@@ -87,11 +90,11 @@ function localStore(varname, val) {
   }, 1)
 }
 
-function wrap(func) {
+function wrap (func) {
   func();
 }
 
-function loadScript(url, callback) {
+function loadScript (url, callback) {
   var script = document.createElement("script")
   script.type = "text/javascript";
   if (script.readyState) { // IE
@@ -110,12 +113,12 @@ function loadScript(url, callback) {
   document.getElementsByTagName("head")[0].appendChild(script);
 }
 
-function loadjQuery(callback) {
+function loadjQuery (callback) {
   loadScript("https://code.jquery.com/jquery-3.3.1.min.js", callback);
 }
 
 function isPrimitive(test) {
-    return (test !== Object(test));
+  return (test !== Object(test));
 };
 
 function type(thing) {
