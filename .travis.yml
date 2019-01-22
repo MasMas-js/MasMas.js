@@ -6,7 +6,12 @@ os:
 sudo: required
 dist: trusty
 install:
-  - "npm i -g eslint"
+  - "npm i -g eslint@>=5.0.0"
+  - "npm i -g eslint-config-standard@latest"
+  - "npm i -g eslint-plugin-import@>=2.13.0"
+  - "npm i -g eslint-plugin-node@>=7.0.0"
+  - "npm i -g eslint-plugin-promise@>=4.0.0"
+  - "npm i -g slint-plugin-standard@>=4.0.0"
 script:
   - "eslint *.js"
 notifications:
