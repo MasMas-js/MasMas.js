@@ -26,21 +26,25 @@ function Int (n) {
   if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && n % 1 === 0) {
     return n
   }
-  throw new Error('TypeExceptionError: Value passed not an integer');
+  throw new Error('TypeExceptionError: Value passed not an integer')
 }
 
+// eslint-disable-next-line
 function Float (n) {
   if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && isFloat(n)) {
     return n
   }
-  throw new Error('TypeExceptionError: Value passed not a float');
+  throw new Error('TypeExceptionError: Value passed not a float')
 }
 
+// eslint-disable-next-line
 function execute (times, func) {
   for (var i = 0; i < times; i++) {
     func();
   }
 }
+
+// eslint-disable-next-line
 function exists (thing) {
   if (thing !== undefined && thing !== null) {
     return true
@@ -48,25 +52,28 @@ function exists (thing) {
   return false
 }
 
+// eslint-disable-next-line
 function globalVar (varname, val) {
   if (!exists(window[varname])) {
      window[varname] = val;
   } else {
-    throw new Error('Variable already exists!');
+    throw new Error('Variable already exists!')
   }
 }
-     
+
+// eslint-disable-next-line
 function commafy (num) {
-    var str = num.toString().split('.');
-    if (str[0].length >= 5) {
-        str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
-    }
-    if (str[1] && str[1].length >= 5) {
-        str[1] = str[1].replace(/(\d{3})/g, '$1 ');
-    }
-    return str.join('.');
+  var str = num.toString().split('.');
+  if (str[0].length >= 5) {
+    str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+  }
+  if (str[1] && str[1].length >= 5) {
+    str[1] = str[1].replace(/(\d{3})/g, '$1 ');
+  }
+  return str.join('.')
 }
 
+// eslint-disable-next-line
 function localStore (varname, val) {
   if (!exists(localStorage[varname])) {
     localStorage[varname] = val;
@@ -90,6 +97,7 @@ function localStore (varname, val) {
   }, 1)
 }
 
+// eslint-disable-next-line
 function wrap (func) {
   func();
 }
