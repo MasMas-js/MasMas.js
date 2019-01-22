@@ -7,7 +7,6 @@
     "test": "test"
   },
   "scripts": {
-    "install": "npm i",
     "test": "eslint masmas.js"
   },
   "repository": {
