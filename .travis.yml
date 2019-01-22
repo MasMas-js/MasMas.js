@@ -1,6 +1,4 @@
 language: node_js
-nodejs:
-  - node
 os:
   - osx
 sudo: required
@@ -12,7 +10,13 @@ install:
   - "npm i -g eslint-plugin-node@>=7.0.0"
   - "npm i -g eslint-plugin-promise@>=4.0.0"
   - "npm i -g eslint-plugin-standard@>=4.0.0"
-script:
-  - "eslint *.js"
+matrix:
+  allow_failures:
+    - nodejs: node
+matrix:
+  include:
+  - nodejs: node
+    env: main=true
+script: "eslint *.js"
 notifications:
   email: false
