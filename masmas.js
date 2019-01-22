@@ -1,16 +1,17 @@
-/**
-  * Credits:
-  * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
-  * Number.prototype.A, Number.prototype.times, localStore, 
-  * wrap, MasMasCanvas, type
-  * ~ user113716 - String.prototype.splice
-  * ~ Ghostoy - commmafy
-  * ~ Lavamantis - Number.prototype.round
-  * ~ RDIL - Fix loadjQuery, added isLoaded
-  * ~ Sam Deering - loadScript
-  * ~ kieranpotts - isPrimitive
-  * [{ Insert your username and functions you contribute up here. }]
-  */
+/*
+ * Credits:
+ * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
+ * Number.prototype.A, Number.prototype.times, localStore, 
+ * wrap, MasMasCanvas, type
+ * ~ user113716 - String.prototype.splice
+ * ~ Ghostoy - commmafy
+ * ~ Lavamantis - Number.prototype.round
+ * ~ RDIL - Fix loadjQuery, added isLoaded, added getRandomLetter
+ * ~ Sam Deering - loadScript
+ * ~ kieranpotts - isPrimitive
+ * ~ Paul S. - genCharArray
+ * [{ Insert your username and functions you contribute up here. }]
+ */
 
 // Returns true if the script is in memory. Used for testing/debugging.
 function isLoaded() {
