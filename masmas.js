@@ -90,32 +90,27 @@ function wrap(func) {
   func();
 }
 
-// BROKEN DON'T USE (loadjQuery)
-//TODO: Fix function
-//function loadjQuery() {
-//  document.head.innerHTML += "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
-//}
+function loadjQuery() {
+  loadScript("https://code.jquery.com/jquery-3.3.1.min.js");
+}
 
 function loadScript(url, callback) {
-
-        var script = document.createElement("script")
-        script.type = "text/javascript";
-
-        if (script.readyState) { // IE
-            script.onreadystatechange = function () {
-                if (script.readyState == "loaded" || script.readyState == "complete") {
-                    script.onreadystatechange = null;
-                    callback();
-                }
-            };
-        } else { // Others
-            script.onload = function () {
-                callback();
-            };
-        }
-
-        script.src = url;
-        document.getElementsByTagName("head")[0].appendChild(script);
+  var script = document.createElement("script")
+  script.type = "text/javascript";
+  if (script.readyState) { // IE
+    script.onreadystatechange = function () {
+      if (script.readyState == "loaded" || script.readyState == "complete") {
+        script.onreadystatechange = null;
+        callback();
+      }
+    };
+  } else { // Others
+    script.onload = function () {
+      callback();
+    };
+  }
+  script.src = url;
+  document.getElementsByTagName("head")[0].appendChild(script);
 }
 
 class Random {
