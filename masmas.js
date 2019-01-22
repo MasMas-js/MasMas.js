@@ -131,6 +131,13 @@ function type(thing) {
 
 class Random {
   constructor() {}
+  genCharArray(charA, charZ) {
+    var a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
+    for (; i <= j; ++i) {
+      a.push(String.fromCharCode(i));
+    }
+    return a;
+  }
   getRandomFloat(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -139,6 +146,10 @@ class Random {
   }
   getRandomBool() {
     return Math.random() >= 0.5;
+  }
+  getRandomLetter() {
+    letters = genCharArray('a', 'z');
+    return letters[getRandomInt(0, 25)];
   }
 }
 
