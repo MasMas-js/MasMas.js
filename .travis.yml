@@ -1,6 +1,4 @@
 language: node_js
-os:
-  - osx
 sudo: required
 dist: trusty
 install:
@@ -10,8 +8,10 @@ matrix:
   - nodejs: node
     env: task=eslint
     script: "eslint masmas.js"
+    os: osx
   - nodejs: 9
     env: task=linkcheck
     script: "find . -name *.md -exec markdown-link-check {}"
+    os: linux
 notifications:
   email: false
