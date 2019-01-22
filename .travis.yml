@@ -1,0 +1,13 @@
+language: nodejs
+nodejs:
+  - node
+os:
+  - osx
+sudo: required
+dist: trusty
+install:
+  - "npm i -g eslint"
+script:
+  - "eslint *.js"
+notifications:
+  email: false
