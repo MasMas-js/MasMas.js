@@ -1,14 +1,15 @@
 /**
   Credits:
-  N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
-  Number.prototype.A, Number.prototype.times, localStore, wrap, loadjQuery, MasMasCanvas, type
-  user113716 - String.prototype.splice
-  Ghostoy - commmafy
-  Lavamantis - Number.prototype.round
-  RDIL - Fix loadjQuery
-  Sam Deering - loadScript
-  kieranpotts - isPrimitive
-  // Insert your username and functions you contribute up here.
+  ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
+    Number.prototype.A, Number.prototype.times, localStore, 
+    wrap, MasMasCanvas, type
+  ~ user113716 - String.prototype.splice
+  ~ Ghostoy - commmafy
+  ~ Lavamantis - Number.prototype.round
+  ~ RDIL - Fix loadjQuery
+  ~ Sam Deering - loadScript
+  ~ kieranpotts - isPrimitive
+  [{ Insert your username and functions you contribute up here. }]
 **/
 
 function isFloat (n) {
