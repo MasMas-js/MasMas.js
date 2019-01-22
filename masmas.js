@@ -126,14 +126,14 @@ function type(thing) {
 }
 
 class Random {
-  constructor() {}
-  getRandomFloat(min, max) {
+  constructor () {}
+  getRandomFloat (min, max) {
     return Math.random() * (max - min) + min;
   }
-  getRandomInt(min, max) {
+  getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-  getRandomBool() {
+  getRandomBool () {
     return Math.random() >= 0.5;
   }
 }
