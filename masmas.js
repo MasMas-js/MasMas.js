@@ -39,14 +39,14 @@ function execute(times, func) {
   }
 }
 function exists(thing){
-  if(thing !== undefined && thing !== null) {
+  if (thing !== undefined && thing !== null) {
     return true;
   }
   return false;
 }
 
 function globalVar(varname, val) {
-  if(!exists(window[varname])){
+  if (!exists(window[varname])){
      window[varname] = val;
   } else {
     throw new Error("Variable already exists!");
