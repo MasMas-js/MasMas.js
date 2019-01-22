@@ -12,6 +12,6 @@ matrix:
     script: "eslint masmas.js"
   - nodejs: 9
     env: task=linkcheck
-    script: "find . -name *.md -exec markdown-link-check {} \;"
+    script: "find . -name *.md -exec markdown-link-check {}"
 notifications:
   email: false
