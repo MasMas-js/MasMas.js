@@ -1,16 +1,17 @@
-/**
-  * Credits:
-  * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
-  * Number.prototype.A, Number.prototype.times, localStore, 
-  * wrap, MasMasCanvas, type
-  * ~ user113716 - String.prototype.splice
-  * ~ Ghostoy - commmafy
-  * ~ Lavamantis - Number.prototype.round
-  * ~ RDIL - Fix loadjQuery, added isLoaded
-  * ~ Sam Deering - loadScript
-  * ~ kieranpotts - isPrimitive
-  * [{ Insert your username and functions you contribute up here. }]
-  */
+/*
+ * Credits:
+ * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
+ * Number.prototype.A, Number.prototype.times, localStore, 
+ * wrap, MasMasCanvas, type
+ * ~ user113716 - String.prototype.splice
+ * ~ Ghostoy - commmafy
+ * ~ Lavamantis - Number.prototype.round
+ * ~ RDIL - Fix loadjQuery, added isLoaded, added getRandomLetter
+ * ~ Sam Deering - loadScript
+ * ~ kieranpotts - isPrimitive
+ * ~ Paul S. - genCharArray
+ * [{ Insert your username and functions you contribute up here. }]
+ */
 
 // Returns true if the script is in memory. Used for testing/debugging.
 function isLoaded() {
@@ -131,6 +132,13 @@ function type(thing) {
 
 class Random {
   constructor() {}
+  genCharArray(charA, charZ) {
+    var a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
+    for (; i <= j; ++i) {
+      a.push(String.fromCharCode(i));
+    }
+    return a;
+  }
   getRandomFloat(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -139,6 +147,10 @@ class Random {
   }
   getRandomBool() {
     return Math.random() >= 0.5;
+  }
+  getRandomLetter() {
+    letters = genCharArray('a', 'z');
+    return letters[getRandomInt(0, 25)];
   }
 }
 
