@@ -5,7 +5,8 @@
   user113716 - String.prototype.splice
   Ghostoy - commmafy
   Lavamantis - Number.prototype.round
-  RDIL - Fix loadjQuery, added loadScript
+  RDIL - Fix loadjQuery
+  Sam Deering - loadScript
   // Insert your username and functions you contribute up here.
 **/
 
@@ -89,15 +90,29 @@ function wrap(func) {
   func();
 }
 
-// BROKEN DON'T USE (loadjQuery + loadScript)
-//TODO: Fix functions
-//function loadjQuery() {
-//  document.head.innerHTML += "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
-//}
-//
-//function loadScript(url) {
-//  document.head.innerHTML += "<script src='" + url + "'></script>";
-//}
+function loadScript(url, callback) {
+  var script = document.createElement("script")
+  script.type = "text/javascript";
+  if (script.readyState) { // IE
+    script.onreadystatechange = function () {
+      if (script.readyState == "loaded" || script.readyState == "complete") {
+        script.onreadystatechange = null;
+        callback();
+      }
+    };
+  } else { // Others
+    script.onload = function () {
+      callback();
+    };
+  }
+  script.src = url;
+  document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+
+function loadjQuery(callback) {
+  loadScript("https://code.jquery.com/jquery-3.3.1.min.js", callback);
+}
 
 class Random {
   constructor() {}
