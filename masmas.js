@@ -117,11 +117,11 @@ function loadjQuery (callback) {
   loadScript("https://code.jquery.com/jquery-3.3.1.min.js", callback);
 }
 
-function isPrimitive(test) {
+function isPrimitive (test) {
   return (test !== Object(test));
 };
 
-function type(thing) {
+function type (thing) {
 	return typeof thing;
 }
 
@@ -138,55 +138,55 @@ class Random {
   }
 }
 
-String.prototype.splice = function(idx, rem, str) {
+String.prototype.splice = function (idx, rem, str) {
   return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
 }
 
-Number.prototype.round = function(places=0) {
+Number.prototype.round = function (places=0) {
   return +(Math.round(this + "e+" + places)  + "e-" + places);
 }
 
-Number.prototype.A = function() {
+Number.prototype.A = function () {
   var str = String(this.valueOf());
-  if(str.includes("000")) {
+  if (str.includes("000")) {
     return Number((this.valueOf()).toFixed(str.indexOf("000")));
   }
-  if(str.includes("999")) {
+  if (str.includes("999")) {
     return Number((this.valueOf()).round(str.indexOf("999")));
   }
   return this.valueOf()
 }
 
-Number.prototype.times = function(func) {
+Number.prototype.times = function (func) {
   for(var i = 0; i < this.valueOf(); i++){
     func();
   }
 }
 
 // Canvas.masmas.js
-function canvasSetup() {
+function canvasSetup () {
   window.canvas = document.getElementById("canvas");
   window.ctx = canvas.getContext('2d')
 }
 class MasMasCanvas {
-  constructor(ctx) {
+  constructor (ctx) {
     this.ctx = ctx
   }
   get c() {
     return this.ctx
   }
-  fill(fillStyle) {
+  fill (fillStyle) {
     this.ctx.fillStyle = fillStyle
   }
-  rect(x, y, width, height) {
+  rect (x, y, width, height) {
     this.ctx.fillRect(x, y, width, height)
   }
-  ellipse(x, y, width, height) {
+  ellipse (x, y, width, height) {
     ctx.beginPath();
     ctx.ellipse(x, y, width, height, 0, 0, 2 * Math.PI)
     ctx.fill();
   }
-  text(text, x, y) {
+  text (text, x, y) {
     this.ctx.fillText(text, x, y)
   }
 }
