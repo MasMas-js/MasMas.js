@@ -12,42 +12,42 @@
   * [{ Insert your username and functions you contribute up here. }]
   */
 
-function isFloat (n) {
+function isFloat(n) {
   return n === +n && n !== (n | 0);
 }
 
-function isInteger (n) {
+function isInteger(n) {
   return n === +n && n === (n | 0);
 }
 
-function Int (n) {
+function Int(n) {
   if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && n % 1 === 0) {
     return n;
   }
   throw new Error('TypeExceptionError: Value passed not an integer');
 }
 
-function Float (n) {
+function Float(n) {
   if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && isFloat(n)) {
     return n;
   }
   throw new Error('TypeExceptionError: Value passed not a float');
 }
 
-function execute (times, func) {
+function execute(times, func) {
   for (var i = 0; i < times; i++) {
     func();
   }
 }
 
-function exists (thing) {
+function exists(thing) {
   if (thing !== undefined && thing !== null) {
     return true;
   }
   return false;
 }
 
-function globalVar (varname, val) {
+function globalVar(varname, val) {
   if (!exists(window[varname])) {
      window[varname] = val;
   } else {
@@ -55,7 +55,7 @@ function globalVar (varname, val) {
   }
 }
 
-function commafy (num) {
+function commafy(num) {
   var str = num.toString().split('.');
   if (str[0].length >= 5) {
     str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
@@ -66,11 +66,10 @@ function commafy (num) {
   return str.join('.');
 }
 
-function localStore (varname, val) {
+function localStore(varname, val) {
   if (!exists(localStorage[varname])) {
     localStorage[varname] = val;
   }
-  
   if (typeof val === 'number') {
     window[varname] = Number(localStorage[varname]);
   } else if (typeof val === 'boolean') {
@@ -90,7 +89,7 @@ function localStore (varname, val) {
   }, 1)
 }
 
-function wrap (func) {
+function wrap(func) {
   func();
 }
 
@@ -98,8 +97,8 @@ function loadScript (url, callback) {
   var script = document.createElement("script");
   script.type = "text/javascript";
   if (script.readyState) { // IE
-    script.onreadystatechange = function () {
-      if (script.readyState == "loaded" || script.readyState == "complete") {
+    script.onreadystatechange = function() {
+      if (script.readyState == 'loaded' || script.readyState == 'complete') {
         script.onreadystatechange = null;
         callback();
       }
@@ -113,7 +112,7 @@ function loadScript (url, callback) {
   document.getElementsByTagName("head")[0].appendChild(script);
 }
 
-function loadjQuery (callback) {
+function loadjQuery(callback) {
   loadScript('https://code.jquery.com/jquery-3.3.1.min.js', callback);
 }
 
@@ -126,27 +125,27 @@ function type (thing) {
 }
 
 class Random {
-  constructor () {}
-  getRandomFloat (min, max) {
+  constructor() {}
+  getRandomFloat(min, max) {
     return Math.random() * (max - min) + min;
   }
-  getRandomInt (min, max) {
+  getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-  getRandomBool () {
+  getRandomBool() {
     return Math.random() >= 0.5;
   }
 }
 
-String.prototype.splice = function (idx, rem, str) {
+String.prototype.splice = function(idx, rem, str) {
   return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
 }
 
-Number.prototype.round = function (places=0) {
+Number.prototype.round = function(places=0) {
   return +(Math.round(this + 'e+' + places)  + 'e-' + places);
 }
 
-Number.prototype.A = function () {
+Number.prototype.A = function() {
   var str = String(this.valueOf());
   if (str.includes('000')) {
     return Number((this.valueOf()).toFixed(str.indexOf('000')));
@@ -157,36 +156,36 @@ Number.prototype.A = function () {
   return this.valueOf();
 }
 
-Number.prototype.times = function (func) {
+Number.prototype.times = function(func) {
   for(var i = 0; i < this.valueOf(); i++) {
     func();
   }
 }
 
 // Canvas.masmas.js
-function canvasSetup () {
+function canvasSetup() {
   window.canvas = document.getElementById('canvas');
   window.ctx = canvas.getContext('2d');
 }
 class MasMasCanvas {
-  constructor (ctx) {
+  constructor(ctx) {
     this.ctx = ctx;
   }
   get c() {
     return this.ctx;
   }
-  fill (fillStyle) {
+  fill(fillStyle) {
     this.ctx.fillStyle = fillStyle;
   }
-  rect (x, y, width, height) {
+  rect(x, y, width, height) {
     this.ctx.fillRect(x, y, width, height);
   }
-  ellipse (x, y, width, height) {
+  ellipse(x, y, width, height) {
     ctx.beginPath();
     ctx.ellipse(x, y, width, height, 0, 0, 2 * Math.PI);
     ctx.fill();
   }
-  text (text, x, y) {
+  text(text, x, y) {
     this.ctx.fillText(text, x, y);
   }
 }
