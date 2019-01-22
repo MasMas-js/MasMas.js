@@ -12,6 +12,6 @@ matrix:
   include:
   - nodejs: node
     env: main=true
-script: "cat .eslintrc.yml"
+script: "eslint"
 notifications:
   email: false
