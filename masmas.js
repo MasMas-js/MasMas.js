@@ -5,7 +5,7 @@
   user113716 - String.prototype.splice
   Ghostoy - commmafy
   Lavamantis - Number.prototype.round
-  RDIL - Fix loadjQuery, added loadScript
+  RDIL - Fix loadjQuery
   Sam Deering - loadScript
   // Insert your username and functions you contribute up here.
 **/
