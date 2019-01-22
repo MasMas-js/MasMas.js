@@ -8,6 +8,6 @@ matrix:
   - nodejs: node
     env: task=eslint
     script: "eslint masmas.js"
-    os: osx
+    os: linux
 notifications:
   email: false
