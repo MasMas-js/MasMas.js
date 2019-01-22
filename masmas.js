@@ -110,7 +110,6 @@ function loadScript(url, callback) {
   document.getElementsByTagName("head")[0].appendChild(script);
 }
 
-
 function loadjQuery(callback) {
   loadScript("https://code.jquery.com/jquery-3.3.1.min.js", callback);
 }
@@ -119,7 +118,7 @@ function isPrimitive(test) {
     return (test !== Object(test));
 };
 
-function type(thing){
+function type(thing) {
 	return typeof thing;
 }
 
@@ -167,13 +166,13 @@ function canvasSetup() {
   window.ctx = canvas.getContext('2d')
 }
 class MasMasCanvas {
-  constructor(ctx){
+  constructor(ctx) {
     this.ctx = ctx;
   }
-  get c(){
+  get c() {
     return this.ctx;
   }
-  fill(fillStyle){
+  fill(fillStyle) {
     this.ctx.fillStyle = fillStyle;
   }
   rect(x, y, width, height) {
