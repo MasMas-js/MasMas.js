@@ -90,10 +90,6 @@ function wrap(func) {
   func();
 }
 
-function loadjQuery() {
-  loadScript("https://code.jquery.com/jquery-3.3.1.min.js");
-}
-
 function loadScript(url, callback) {
   var script = document.createElement("script")
   script.type = "text/javascript";
@@ -111,6 +107,11 @@ function loadScript(url, callback) {
   }
   script.src = url;
   document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+
+function loadjQuery(callback) {
+  loadScript("https://code.jquery.com/jquery-3.3.1.min.js", callback);
 }
 
 class Random {
