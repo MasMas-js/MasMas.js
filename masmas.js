@@ -153,7 +153,7 @@ Number.prototype.A = function () {
   if (str.includes("999")) {
     return Number((this.valueOf()).round(str.indexOf('999')));
   }
-  return this.valueOf()
+  return this.valueOf();
 }
 
 Number.prototype.times = function (func) {
