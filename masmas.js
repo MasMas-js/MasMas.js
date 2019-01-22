@@ -114,6 +114,14 @@ function loadjQuery(callback) {
   loadScript("https://code.jquery.com/jquery-3.3.1.min.js", callback);
 }
 
+function isPrimitive(test) {
+    return (test !== Object(test));
+};
+
+function type(thing){
+	return typeof thing;
+}
+
 class Random {
   constructor() {}
   getRandomFloat(min, max) {
