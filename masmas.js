@@ -12,7 +12,7 @@
 **/
 
 function isFloat (n) {
-  return n === +n && n !== (n | 0)
+  return n === +n && n !== (n | 0);
 }
 
 function isInteger (n) {
@@ -35,7 +35,7 @@ function Float (n) {
 
 function execute (times, func) {
   for (var i = 0; i < times; i++) {
-    func()
+    func();
   }
 }
 
@@ -78,6 +78,7 @@ function localStore (varname, val) {
   } else {
     window[varname] = localStorage[varname];
   }
+  
   setInterval(() => {
     if (typeof val === 'number') {
       localStorage[varname] = Number(window[varname]);
@@ -89,13 +90,12 @@ function localStore (varname, val) {
   }, 1)
 }
 
-// eslint-disable-next-line
 function wrap (func) {
   func();
 }
 
 function loadScript (url, callback) {
-  var script = document.createElement("script")
+  var script = document.createElement("script");
   script.type = "text/javascript";
   if (script.readyState) { // IE
     script.onreadystatechange = function () {
@@ -109,7 +109,7 @@ function loadScript (url, callback) {
       callback();
     };
   }
-  script.src = url
+  script.src = url;
   document.getElementsByTagName("head")[0].appendChild(script);
 }
 
