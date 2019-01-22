@@ -1,12 +1,13 @@
 /**
   Credits:
   N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
-  Number.prototype.A, Number.prototype.times, localStore, wrap, loadjQuery, MasMasCanvas
+  Number.prototype.A, Number.prototype.times, localStore, wrap, loadjQuery, MasMasCanvas, type
   user113716 - String.prototype.splice
   Ghostoy - commmafy
   Lavamantis - Number.prototype.round
   RDIL - Fix loadjQuery
   Sam Deering - loadScript
+  kieranpotts - isPrimitive
   // Insert your username and functions you contribute up here.
 **/
 
@@ -112,6 +113,14 @@ function loadScript(url, callback) {
 
 function loadjQuery(callback) {
   loadScript("https://code.jquery.com/jquery-3.3.1.min.js", callback);
+}
+
+function isPrimitive(test) {
+    return (test !== Object(test));
+};
+
+function type(thing){
+	return typeof thing;
 }
 
 class Random {
