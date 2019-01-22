@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "eslint"
+    "install": "npm i",
+    "test": "eslint masmas.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,13 @@
   "bugs": {
     "url": "https://github.com/MasMas-js/MasMas.js/issues"
   },
-  "homepage": "https://github.com/MasMas-js/MasMas.js#readme"
+  "dependencies": {
+    "eslint@>=5.0.0",
+    "eslint-config-standard@latest",
+    "eslint-plugin-import@>=2.13.0",
+    "eslint-plugin-node@>=7.0.0",
+    "eslint-plugin-promise@>=4.0.0",
+    "eslint-plugin-standard@>=4.0.0"
+  },
+  "homepage": "https://github.com/MasMas-js/MasMas.js"
 }
