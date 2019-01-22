@@ -23,17 +23,17 @@ function isInteger (n) {
 
 // eslint-disable-next-line
 function Int (n) {
-  if (typeof n === "number" && n <= 9223372036854775807 && n >= -9223372036854775807 && n % 1 === 0) {
-    return n;
+  if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && n % 1 === 0) {
+    return n
   }
-  throw new Error("TypeExceptionError: Value passed not an integer");
+  throw new Error('TypeExceptionError: Value passed not an integer');
 }
 
 function Float (n) {
-  if (typeof n === "number" && n <= 9223372036854775807 && n >= -9223372036854775807 && isFloat(n)) {
-    return n;
+  if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && isFloat(n)) {
+    return n
   }
-  throw new Error("TypeExceptionError: Value passed not a float");
+  throw new Error('TypeExceptionError: Value passed not a float');
 }
 
 function execute (times, func) {
@@ -43,16 +43,16 @@ function execute (times, func) {
 }
 function exists (thing) {
   if (thing !== undefined && thing !== null) {
-    return true;
+    return true
   }
-  return false;
+  return false
 }
 
 function globalVar (varname, val) {
   if (!exists(window[varname])) {
      window[varname] = val;
   } else {
-    throw new Error("Variable already exists!");
+    throw new Error('Variable already exists!');
   }
 }
      
@@ -72,15 +72,15 @@ function localStore (varname, val) {
     localStorage[varname] = val;
   }
   
-  if (typeof val === "number") {
+  if (typeof val === 'number') {
     window[varname] = Number(localStorage[varname]);
-  } else if (typeof val === "boolean") {
+  } else if (typeof val === 'boolean') {
     window[varname] = Boolean(localStorage[varname]);
   } else {
     window[varname] = localStorage[varname];
   }
   setInterval(() => {
-    if (typeof val === "number") {
+    if (typeof val === 'number') {
       localStorage[varname] = Number(window[varname]);
     } else if (typeof val === "boolean") {
       localStorage[varname] = Boolean(window[varname]);
@@ -114,7 +114,7 @@ function loadScript (url, callback) {
 }
 
 function loadjQuery (callback) {
-  loadScript("https://code.jquery.com/jquery-3.3.1.min.js", callback);
+  loadScript('https://code.jquery.com/jquery-3.3.1.min.js', callback);
 }
 
 function isPrimitive (test) {
@@ -143,12 +143,12 @@ String.prototype.splice = function (idx, rem, str) {
 }
 
 Number.prototype.round = function (places=0) {
-  return +(Math.round(this + "e+" + places)  + "e-" + places);
+  return +(Math.round(this + 'e+' + places)  + 'e-' + places);
 }
 
 Number.prototype.A = function () {
   var str = String(this.valueOf());
-  if (str.includes("000")) {
+  if (str.includes('000)) {
     return Number((this.valueOf()).toFixed(str.indexOf("000")));
   }
   if (str.includes("999")) {
@@ -165,7 +165,7 @@ Number.prototype.times = function (func) {
 
 // Canvas.masmas.js
 function canvasSetup () {
-  window.canvas = document.getElementById("canvas");
+  window.canvas = document.getElementById('canvas');
   window.ctx = canvas.getContext('2d')
 }
 class MasMasCanvas {
