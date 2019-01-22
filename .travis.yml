@@ -8,7 +8,7 @@ install:
 matrix:
   include:
   - nodejs: node
-    env: task=main
+    env: task=eslint
     script: "eslint masmas.js"
   - nodejs: 9
     env: task=linkcheck
