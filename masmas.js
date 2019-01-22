@@ -138,7 +138,7 @@ Number.prototype.times = function(func) {
 }
 
 // Canvas.masmas.js
-function canvasSetup(){
+function canvasSetup() {
   window.canvas = document.getElementById("canvas");
   window.ctx = canvas.getContext('2d')
 }
@@ -152,15 +152,15 @@ class MasMasCanvas {
   fill(fillStyle){
     this.ctx.fillStyle = fillStyle;
   }
-  rect(x, y, width, height){
+  rect(x, y, width, height) {
     this.ctx.fillRect(x, y, width, height);
   }
-  ellipse(x, y, width, height){
+  ellipse(x, y, width, height) {
     ctx.beginPath();
     ctx.ellipse(x, y, width, height, 0, 0, 2 * Math.PI);
     ctx.fill();
   }
-  text(text, x, y){
+  text(text, x, y) {
     this.ctx.fillText(text, x, y)
   }
 }
