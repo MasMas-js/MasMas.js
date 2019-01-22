@@ -170,20 +170,20 @@ function canvasSetup() {
 }
 class MasMasCanvas {
   constructor(ctx) {
-    this.ctx = ctx;
+    this.ctx = ctx
   }
   get c() {
-    return this.ctx;
+    return this.ctx
   }
   fill(fillStyle) {
-    this.ctx.fillStyle = fillStyle;
+    this.ctx.fillStyle = fillStyle
   }
   rect(x, y, width, height) {
-    this.ctx.fillRect(x, y, width, height);
+    this.ctx.fillRect(x, y, width, height)
   }
   ellipse(x, y, width, height) {
     ctx.beginPath();
-    ctx.ellipse(x, y, width, height, 0, 0, 2 * Math.PI);
+    ctx.ellipse(x, y, width, height, 0, 0, 2 * Math.PI)
     ctx.fill();
   }
   text(text, x, y) {
