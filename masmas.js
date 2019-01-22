@@ -11,57 +11,49 @@
   // Insert your username and functions you contribute up here.
 **/
 
-// eslint-disable-next-line
 function isFloat (n) {
   return n === +n && n !== (n | 0)
 }
 
-// eslint-disable-next-line
 function isInteger (n) {
-  return n === +n && n === (n | 0)
+  return n === +n && n === (n | 0);
 }
 
-// eslint-disable-next-line
 function Int (n) {
   if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && n % 1 === 0) {
-    return n
+    return n;
   }
-  throw new Error('TypeExceptionError: Value passed not an integer')
+  throw new Error('TypeExceptionError: Value passed not an integer');
 }
 
-// eslint-disable-next-line
 function Float (n) {
   if (typeof n === 'number' && n <= 9223372036854775807 && n >= -9223372036854775807 && isFloat(n)) {
-    return n
+    return n;
   }
-  throw new Error('TypeExceptionError: Value passed not a float')
+  throw new Error('TypeExceptionError: Value passed not a float');
 }
 
-// eslint-disable-next-line
 function execute (times, func) {
   for (var i = 0; i < times; i++) {
-    func();
+    func()
   }
 }
 
-// eslint-disable-next-line
 function exists (thing) {
   if (thing !== undefined && thing !== null) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
-// eslint-disable-next-line
 function globalVar (varname, val) {
   if (!exists(window[varname])) {
      window[varname] = val;
   } else {
-    throw new Error('Variable already exists!')
+    throw new Error('Variable already exists!');
   }
 }
 
-// eslint-disable-next-line
 function commafy (num) {
   var str = num.toString().split('.');
   if (str[0].length >= 5) {
@@ -70,7 +62,7 @@ function commafy (num) {
   if (str[1] && str[1].length >= 5) {
     str[1] = str[1].replace(/(\d{3})/g, '$1 ');
   }
-  return str.join('.')
+  return str.join('.');
 }
 
 // eslint-disable-next-line
@@ -107,15 +99,14 @@ function loadScript (url, callback) {
   script.type = "text/javascript";
   if (script.readyState) { // IE
     script.onreadystatechange = function () {
-      // eslint-disable-next-line
       if (script.readyState == "loaded" || script.readyState == "complete") {
         script.onreadystatechange = null;
-        callback()
+        callback();
       }
     };
   } else { // Others
     script.onload = function () {
-      callback()
+      callback();
     };
   }
   script.src = url
@@ -127,7 +118,7 @@ function loadjQuery (callback) {
 }
 
 function isPrimitive (test) {
-  return (test !== Object(test))
+  return (test !== Object(test));
 };
 
 function type (thing) {
@@ -163,11 +154,11 @@ Number.prototype.A = function () {
   if (str.includes("999")) {
     return Number((this.valueOf()).round(str.indexOf('999')));
   }
-  return this.valueOf()
+  return this.valueOf();
 }
 
 Number.prototype.times = function (func) {
-  for(var i = 0; i < this.valueOf(); i++){
+  for(var i = 0; i < this.valueOf(); i++) {
     func();
   }
 }
@@ -175,27 +166,27 @@ Number.prototype.times = function (func) {
 // Canvas.masmas.js
 function canvasSetup () {
   window.canvas = document.getElementById('canvas');
-  window.ctx = canvas.getContext('2d')
+  window.ctx = canvas.getContext('2d');
 }
 class MasMasCanvas {
   constructor (ctx) {
-    this.ctx = ctx
+    this.ctx = ctx;
   }
   get c() {
-    return this.ctx
+    return this.ctx;
   }
   fill (fillStyle) {
-    this.ctx.fillStyle = fillStyle
+    this.ctx.fillStyle = fillStyle;
   }
   rect (x, y, width, height) {
-    this.ctx.fillRect(x, y, width, height)
+    this.ctx.fillRect(x, y, width, height);
   }
   ellipse (x, y, width, height) {
     ctx.beginPath();
-    ctx.ellipse(x, y, width, height, 0, 0, 2 * Math.PI)
+    ctx.ellipse(x, y, width, height, 0, 0, 2 * Math.PI);
     ctx.fill();
   }
   text (text, x, y) {
-    this.ctx.fillText(text, x, y)
+    this.ctx.fillText(text, x, y);
   }
 }
