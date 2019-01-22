@@ -98,7 +98,7 @@ function wrap(func) {
   func();
 }
 
-function loadScript (url, callback) {
+function loadScript(url, callback) {
   var script = document.createElement("script");
   script.type = "text/javascript";
   if (script.readyState) { // IE
@@ -121,11 +121,11 @@ function loadjQuery(callback) {
   loadScript('https://code.jquery.com/jquery-3.3.1.min.js', callback);
 }
 
-function isPrimitive (test) {
+function isPrimitive(test) {
   return (test !== Object(test));
 };
 
-function type (thing) {
+function type(thing) {
 	return typeof thing;
 }
 
