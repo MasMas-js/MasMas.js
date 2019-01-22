@@ -107,17 +107,18 @@ function loadScript (url, callback) {
   script.type = "text/javascript";
   if (script.readyState) { // IE
     script.onreadystatechange = function () {
+      // eslint-disable-next-line
       if (script.readyState == "loaded" || script.readyState == "complete") {
         script.onreadystatechange = null;
-        callback();
+        callback()
       }
     };
   } else { // Others
     script.onload = function () {
-      callback();
+      callback()
     };
   }
-  script.src = url;
+  script.src = url
   document.getElementsByTagName("head")[0].appendChild(script);
 }
 
@@ -126,7 +127,7 @@ function loadjQuery (callback) {
 }
 
 function isPrimitive (test) {
-  return (test !== Object(test));
+  return (test !== Object(test))
 };
 
 function type (thing) {
