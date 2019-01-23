@@ -13,13 +13,11 @@
  * ~ user113716 - String.prototype.splice
  * ~ Ghostoy - commmafy
  * ~ Lavamantis - Number.prototype.round
- * ~ RDIL - Fix loadjQuery, added isLoaded, added getRandomLetter
+ * ~ RDIL - Fix loadjQuery, added isLoaded, added getRandomLetter, added isNull
  * ~ Sam Deering - loadScript
  * ~ kieranpotts - isPrimitive
  * ~ Paul S. - genCharArray
  * [{ Insert your username and functions you contribute up here. }]
- * 
- * Maintained by RDIL and N8Programs
  */
 
 // Returns true if the script is in memory. Used for testing/debugging.
@@ -55,8 +53,13 @@ function execute(times, func) {
   }
 }
 
-function exists(thing) {
-  return (thing !== undefined && thing !== null);
+function exists(theItem) {
+  return (theItem !== undefined && theItem !== null);
+}
+
+function isNull(theItem) {
+  if(exists(theItem)) return (theItem == null);
+  else throw new Error('Item doesn\'t exist!');
 }
 
 function globalVar(varname, val) {
