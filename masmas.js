@@ -149,7 +149,7 @@ class Random {
     }
   }
   getRandomBool() {
-    return Math.random() >= 0.5;
+    return (Math.random() >= 0.5);
   }
   getRandomLetter() {
     letters = genCharArray('a', 'z');
