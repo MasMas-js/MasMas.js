@@ -8,7 +8,7 @@
  * 
  * Credits:
  * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
- * Number.prototype.A, Number.prototype.times, localStore, 
+ * Number.prototype.A, Number.prototype.times, localStore, String.prototype.numberOf
  * wrap, MasMasCanvas, type
  * ~ user113716 - String.prototype.splice
  * ~ Ghostoy - commmafy
@@ -165,6 +165,10 @@ class Random {
 
 String.prototype.splice = function(idx, rem, str) {
   return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+}
+String.
+prototype.numberOf = function(str){
+  return (((this.valueOf()).split("")).filter(i => i === str)).length;
 }
 
 Number.prototype.round = function(places=0) {
