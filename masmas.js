@@ -162,7 +162,7 @@ String.prototype.splice = function(idx, rem, str) {
 }
 
 Number.prototype.round = function(places=0) {
-  return (Math.round(this + 'e+' + places)  + 'e-' + places);
+  return +Math.round(this + 'e+' + places)  + 'e-' + places;
 }
 
 Number.prototype.A = function() {
