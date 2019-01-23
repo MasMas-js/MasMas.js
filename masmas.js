@@ -143,9 +143,9 @@ class Random {
   }
   getRandomNumber(min, max, float=false) {
     if (float){
-      return Math.random() * (max - min) + min;
+      return (Math.random() * (max - min) + min);
     } else {
-      return Math.floor(Math.random() * (max - min + 1) + min);          
+      return (Math.floor(Math.random() * (max - min + 1) + min));
     }
   }
   getRandomBool() {
@@ -162,7 +162,7 @@ String.prototype.splice = function(idx, rem, str) {
 }
 
 Number.prototype.round = function(places=0) {
-  return +(Math.round(this + 'e+' + places)  + 'e-' + places);
+  return (Math.round(this + 'e+' + places)  + 'e-' + places);
 }
 
 Number.prototype.A = function() {
