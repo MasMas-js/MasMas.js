@@ -58,8 +58,7 @@ function exists(theItem) {
 }
 
 function isNull(theItem) {
-  if(exists(theItem)) return (theItem == null);
-  else throw new Error('Item doesn\'t exist!');
+  return (theItem === null)
 }
 
 function globalVar(varname, val) {
