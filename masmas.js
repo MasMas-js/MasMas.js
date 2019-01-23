@@ -56,10 +56,7 @@ function execute(times, func) {
 }
 
 function exists(thing) {
-  if (thing !== undefined && thing !== null) {
-    return true;
-  }
-  return false;
+  return (thing !== undefined && thing !== null);
 }
 
 function globalVar(varname, val) {
