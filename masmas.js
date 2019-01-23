@@ -1,4 +1,11 @@
 /*
+ * - MasMas.js -
+ * Latest version can be found at:
+ * https://raw.githubusercontent.com/MasMas-js/MasMas.js/master/masmas.js
+ * 
+ * Documentation located at:
+ * https://masmas-js.github.io
+ * 
  * Credits:
  * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
  * Number.prototype.A, Number.prototype.times, localStore, 
@@ -11,6 +18,8 @@
  * ~ kieranpotts - isPrimitive
  * ~ Paul S. - genCharArray
  * [{ Insert your username and functions you contribute up here. }]
+ * 
+ * Maintained by RDIL and N8Programs
  */
 
 // Returns true if the script is in memory. Used for testing/debugging.
