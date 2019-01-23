@@ -19,11 +19,11 @@ function isLoaded() {
 }
 
 function isFloat(n) {
-  return n === +n && n !== (n | 0);
+  return (n === +n && n !== (n | 0));
 }
 
 function isInteger(n) {
-  return n === +n && n === (n | 0);
+  return (n === +n && n === (n | 0));
 }
 
 function Int(n) {
@@ -110,7 +110,7 @@ function loadScript(url, callback) {
       }
     };
   } else { // Others
-    script.onload = function () {
+    script.onload = function() {
       callback();
     };
   }
