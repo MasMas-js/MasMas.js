@@ -143,13 +143,13 @@ class Random {
   }
   getRandomNumber(min, max, float=false) {
     if (float){
-      return Math.random() * (max - min) + min;
+      return (Math.random() * (max - min) + min);
     } else {
-      return Math.floor(Math.random() * (max - min + 1) + min);          
+      return (Math.floor(Math.random() * (max - min + 1) + min));
     }
   }
   getRandomBool() {
-    return Math.random() >= 0.5;
+    return (Math.random() >= 0.5);
   }
   getRandomLetter() {
     letters = genCharArray('a', 'z');
