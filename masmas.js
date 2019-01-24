@@ -168,8 +168,7 @@ class Random {
 String.prototype.splice = function(idx, rem, str) {
   return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
 }
-String.
-prototype.numberOf = function(str){
+String.prototype.numberOf = function(str){
   return (((this.valueOf()).split("")).filter(i => i === str)).length;
 }
 
