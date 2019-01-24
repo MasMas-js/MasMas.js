@@ -1,6 +1,9 @@
+container:
+  image: node:latest
+  cpu: 4
+  memory: 10G
+
 link_check_task:
-  container:
-    image: node:latest
   node_modules_cache:
     folder: node_modules
     fingerprint_script: ls
@@ -8,8 +11,6 @@ link_check_task:
   script: find . -name \*.md -exec markdown-link-check {} \;
 
 markdown_lint_task:
-  container:
-    image: node:latest
   depends_on:
     - link_check
   node_modules_cache:
