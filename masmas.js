@@ -58,7 +58,7 @@ function exists(theItem) {
 }
 
 function isNull(theItem) {
-  return (theItem === null)
+  return (theItem === null);
 }
 
 function globalVar(varname, val) {
