@@ -150,7 +150,7 @@ class Random {
     return a;
   }
   getRandomNumber(min, max, float=false) {
-    if (float){
+    if (float) {
       return (Math.random() * (max - min) + min);
     } else {
       return (Math.floor(Math.random() * (max - min + 1) + min));
@@ -168,7 +168,7 @@ class Random {
 String.prototype.splice = function(idx, rem, str) {
   return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
 }
-String.prototype.numberOf = function(str){
+String.prototype.numberOf = function(str) {
   return (((this.valueOf()).split("")).filter(i => i === str)).length;
 }
 
