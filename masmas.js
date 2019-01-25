@@ -8,12 +8,13 @@
  * 
  * Credits:
  * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
- * Number.prototype.A, Number.prototype.times, localStore, String.prototype.numberOf
- * wrap, MasMasCanvas, type
+ * Number.prototype.A, Number.prototype.times, localStore, 
+ * String.prototype.numberOf wrap, MasMasCanvas, type
  * ~ user113716 - String.prototype.splice
  * ~ Ghostoy - commmafy
  * ~ Lavamantis - Number.prototype.round
- * ~ RDIL - Fix loadjQuery, added isLoaded, added getRandomLetter, added isNull
+ * ~ RDIL - Fix loadjQuery, added isLoaded, added getRandomLetter, 
+ * added isNull
  * ~ Sam Deering - loadScript
  * ~ kieranpotts - isPrimitive
  * ~ Paul S. - genCharArray
