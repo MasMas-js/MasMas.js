@@ -218,3 +218,8 @@ class MasMasCanvas {
     this.ctx.fillText(text, x, y);
   }
 }
+
+function getSpeedOfLight() {
+  // in meters a second
+  return (commafy("299792458"));
+}
