@@ -62,11 +62,8 @@ function isNull(theItem) {
 }
 
 function globalVar(varname, val) {
-  if (!exists(window[varname])) {
-     window[varname] = val;
-  } else {
-    throw new Error('Variable already exists!');
-  }
+  if (!exists(window[varname])) window[varname] = val;
+  else throw new Error('Variable already exists!');
 }
 
 function commafy(num) {
@@ -81,9 +78,8 @@ function commafy(num) {
 }
 
 function localStore(varname, val) {
-  if (!exists(localStorage[varname])) {
-    localStorage[varname] = val;
-  }
+  if (!exists(localStorage[varname])) localStorage[varname] = val;
+  
   if (typeof val === 'number') {
     window[varname] = Number(localStorage[varname]);
   } else if (typeof val === 'boolean') {
@@ -101,6 +97,7 @@ function localStore(varname, val) {
       localStorage[varname] = window[varname];
     }
   }, 1)
+  
 }
 
 function wrap(func) {
