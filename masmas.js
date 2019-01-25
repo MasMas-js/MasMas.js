@@ -219,7 +219,8 @@ class MasMasCanvas {
   }
 }
 
-function getSpeedOfLight() {
-  // in meters a second
-  return (commafy("299792458"));
+function getSpeedOfLight(int) {
+  // in meters a second!!
+  if (int) return (299792458);
+  else return (commafy("299792458"));
 }
