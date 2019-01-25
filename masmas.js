@@ -135,6 +135,9 @@ function isPrimitive(test) {
 function type(thing) {
 	return typeof thing;
 }
+function validDate(str){
+  return /\[(0[13578]\-[0-3][0-9]|0[469]\-[0-3][0-9]|02-[0-2][0-8]|(10|11|12)\-[0-3][0-9])\]/.test(str);
+}
 
 class Random {
   constructor() {}
