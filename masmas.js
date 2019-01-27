@@ -124,8 +124,8 @@ function loadScript(url, callback) {
   document.getElementsByTagName("head")[0].appendChild(script);
 }
 
-function loadjQuery(callback) {
-  loadScript('https://code.jquery.com/jquery-3.3.1.min.js', callback);
+function loadjQuery(callback, url='https://code.jquery.com/jquery-3.3.1.min.js') {
+  loadScript(url, callback);
 }
 
 function isPrimitive(test) {
