@@ -136,7 +136,7 @@ function isPrimitive(test) {
 function type(thing) {
 	return typeof thing;
 }
-function validDate(str){
+function validDate(str) {
   return /\[(0[13578]\-[0-3][0-9]|0[469]\-[0-3][0-9]|02-[0-2][0-8]|(10|11|12)\-[0-3][0-9])\]/.test(str);
 }
 function isPrime(value) {
@@ -147,10 +147,10 @@ function isPrime(value) {
     }
     return value > 1;
 }
-function factors(n){
+function factors(n) {
   var arr = [];
-  for(var i = 1; i < Math.sqrt(n); i++){
-    if(n % i === 0){
+  for(var i = 1; i < Math.sqrt(n); i++) {
+    if (n % i === 0) {
       arr.push(i);
       arr.push(n/i);
     }
