@@ -79,7 +79,7 @@ function commafy(num) {
 }
 
 function localStore(varname, val) {
-  if (!exists(localStorage[varname]) && typeof val === "object") localStorage[varname] = val;
+  if (!exists(localStorage[varname]) && typeof val === "object") localStorage[varname] = JSON.stringify(val);
   if (!exists(localStorage[varname])) localStorage[varname] = val;
   
   if (typeof val === 'number') {
