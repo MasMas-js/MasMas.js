@@ -85,6 +85,8 @@ function localStore(varname, val) {
     window[varname] = Number(localStorage[varname]);
   } else if (typeof val === 'boolean') {
     window[varname] = Boolean(localStorage[varname]);
+  } else if (typeof val === 'object'){
+    window[varname] = JSON.parse(localStorage[varname]);
   } else {
     window[varname] = localStorage[varname];
   }
@@ -94,6 +96,8 @@ function localStore(varname, val) {
       localStorage[varname] = Number(window[varname]);
     } else if (typeof val === "boolean") {
       localStorage[varname] = Boolean(window[varname]);
+    } else if (typeof val === "object") {
+      localStorage[varname] = JSON.stringify(window[varname]);
     } else {
       localStorage[varname] = window[varname];
     }
