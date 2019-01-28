@@ -139,14 +139,16 @@ function type(thing) {
 function validDate(str) {
   return /\[(0[13578]\-[0-3][0-9]|0[469]\-[0-3][0-9]|02-[0-2][0-8]|(10|11|12)\-[0-3][0-9])\]/.test(str);
 }
+
 function isPrime(value) {
-    for(var i = 2; i < value; i++) {
-        if(value % i === 0) {
-            return false;
-        }
+  for(var i = 2; i < value; i++) {
+    if(value % i === 0) {
+      return false;
     }
-    return value > 1;
+  }
+  return value > 1;
 }
+
 function factors(n) {
   var arr = [];
   for(var i = 1; i < Math.sqrt(n); i++) {
