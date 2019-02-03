@@ -9,7 +9,7 @@
  * Credits:
  * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
  * Number.prototype.A, Number.prototype.times, localStore, 
- * String.prototype.numberOf wrap, MasMasCanvas, type
+ * String.prototype.numberOf, wrap, MasMasCanvas, type, encode, decode
  * ~ user113716 - String.prototype.splice
  * ~ Ghostoy - commmafy
  * ~ Lavamantis - Number.prototype.round
@@ -163,6 +163,14 @@ function factors(n) {
     }
   }
   return arr;
+}
+
+function encode(str, key){
+	return str.split('').map(i => i.charCodeAt(0)*key).join("-");
+}
+
+function decode(str, key){
+	return str.split("-").map(i => String.fromCharCode(i/key % 1 === 0 ? i/key : Math.random()*100)).join("");
 }
 
 class Random {
