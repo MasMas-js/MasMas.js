@@ -9,7 +9,7 @@
  * Credits:
  * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
  * Number.prototype.A, Number.prototype.times, localStore, 
- * String.prototype.numberOf wrap, MasMasCanvas, type
+ * String.prototype.numberOf, wrap, MasMasCanvas, type, encode, decode
  * ~ user113716 - String.prototype.splice
  * ~ Ghostoy - commmafy
  * ~ Lavamantis - Number.prototype.round
@@ -79,12 +79,15 @@ function commafy(num) {
 }
 
 function localStore(varname, val) {
-  if (!exists(localStorage[varname])) localStorage[varname] = val;
+  if (!exists(localStorage[varname]) && typeof val === "object") localStorage[varname] = JSON.stringify(val);
+  else if (!exists(localStorage[varname])) localStorage[varname] = val;
   
   if (typeof val === 'number') {
     window[varname] = Number(localStorage[varname]);
   } else if (typeof val === 'boolean') {
     window[varname] = Boolean(localStorage[varname]);
+  } else if (typeof val === 'object'){
+    window[varname] = JSON.parse(localStorage[varname]);
   } else {
     window[varname] = localStorage[varname];
   }
@@ -94,6 +97,8 @@ function localStore(varname, val) {
       localStorage[varname] = Number(window[varname]);
     } else if (typeof val === "boolean") {
       localStorage[varname] = Boolean(window[varname]);
+    } else if (typeof val === "object") {
+      localStorage[varname] = JSON.stringify(window[varname]);
     } else {
       localStorage[varname] = window[varname];
     }
@@ -103,6 +108,10 @@ function localStore(varname, val) {
 
 function wrap(func) {
   func();
+}
+
+function getItem(item) {
+  return item;
 }
 
 function loadScript(url, callback) {
@@ -124,8 +133,9 @@ function loadScript(url, callback) {
   document.getElementsByTagName("head")[0].appendChild(script);
 }
 
-function loadjQuery(callback) {
-  loadScript('https://code.jquery.com/jquery-3.3.1.min.js', callback);
+function loadjQuery(callback, url) {
+  url = url || 'https://code.jquery.com/jquery-3.3.1.min.js';
+  loadScript(url, callback);
 }
 
 function isPrimitive(test) {
@@ -135,8 +145,37 @@ function isPrimitive(test) {
 function type(thing) {
 	return typeof thing;
 }
+
 function validDate(str){
   return /\[(0[13578]\-[0-3][0-9]|0[469]\-[0-3][0-9]|02-[0-2][0-8]|(10|11|12)\-[0-3][0-9])\]/.test(str);
+}
+
+function isPrime(value) {
+  for(var i = 2; i < value; i++) {
+    if(value % i === 0) {
+      return false;
+    }
+  }
+  return value > 1;
+}
+
+function factors(n) {
+  var arr = [];
+  for(var i = 1; i < Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      arr.push(i);
+      arr.push(n/i);
+    }
+  }
+  return arr;
+}
+
+function encode(str, key){
+	return str.split('').map(i => i.charCodeAt(0)*key).join("-");
+}
+
+function decode(str, key){
+	return str.split("-").map(i => String.fromCharCode(i/key % 1 === 0 ? i/key : Math.random()*100)).join("");
 }
 
 class Random {
@@ -220,4 +259,10 @@ class MasMasCanvas {
   text(text, x, y) {
     this.ctx.fillText(text, x, y);
   }
+}
+
+function getSpeedOfLight(int) {
+  // in meters a second!!
+  if (int) return (299792458);
+  else return (commafy("299792458"));
 }
