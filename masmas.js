@@ -231,7 +231,35 @@ Number.prototype.times = function(func) {
     func();
   }
 }
+//  Data handling
+Array.prototype.numberOf = function(x){
+	 return this.filter(i => i === x).length;
+}
+function sum(arr){
+	return arr.reduce((t, v) => t+v);
+}
+function mean(arr){
+	return sum(arr)/arr.length;
+}
 
+function median(arr){
+	arr = arr.sort((x, y) => x - y);
+	return (arr.length % 2 === 1) ? arr[Math.ceil(arr.length/2) - 1] : mean([arr[Math.ceil(arr.length/2) - 1], arr[Math.ceil(arr.length/2)]]);
+}
+
+function mode(arr){
+	var maxNumber = 0;
+	arr.forEach(i => {if(arr.numberOf(i) > maxNumber) maxNumber = arr.numberOf(i)});
+	var modes = [];
+	arr.forEach(i => {if(arr.numberOf(i) === maxNumber) modes.push(i)});
+	modes = Array.from(new Set(modes));
+	if(modes.length > 2) modes = [];
+	return modes;
+}
+
+function range(arr) {
+	return Math.max(...arr) - Math.min(...arr);
+}
 // Canvas.masmas.js
 function canvasSetup() {
   window.canvas = document.getElementById('canvas');
