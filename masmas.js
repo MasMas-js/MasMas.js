@@ -2,7 +2,6 @@
  * - MasMas.js -
  * Latest version can be found at:
  * https://raw.githubusercontent.com/MasMas-js/MasMas.js/master/masmas.js
- * 
  * Documentation located at:
  * https://masmas-js.github.io
  * 
@@ -18,8 +17,7 @@
  * ~ Sam Deering - loadScript
  * ~ kieranpotts - isPrimitive
  * ~ Paul S. - genCharArray
- * [{ Insert your username and functions you contribute up here. }]
- */
+ * Insert your username and functions you contribute up here*/
 
 // Returns true if the script is in memory. Used for testing/debugging.
 function isLoaded() {
@@ -124,7 +122,8 @@ function loadScript(url, callback) {
         callback();
       }
     };
-  } else { // Others
+  } else {
+    // Others
     script.onload = function() {
       callback();
     };
@@ -232,22 +231,22 @@ Number.prototype.times = function(func) {
   }
 }
 //  Data handling
-Array.prototype.numberOf = function(x){
+Array.prototype.numberOf = function(x) {
 	 return this.filter(i => i === x).length;
 }
-function sum(arr){
+function sum(arr) {
 	return arr.reduce((t, v) => t+v);
 }
-function mean(arr){
+function mean(arr) {
 	return sum(arr)/arr.length;
 }
 
-function median(arr){
+function median(arr) {
 	arr = arr.sort((x, y) => x - y);
 	return (arr.length % 2 === 1) ? arr[Math.ceil(arr.length/2) - 1] : mean([arr[Math.ceil(arr.length/2) - 1], arr[Math.ceil(arr.length/2)]]);
 }
 
-function mode(arr){
+function mode(arr) {
 	var maxNumber = 0;
 	arr.forEach(i => {if(arr.numberOf(i) > maxNumber) maxNumber = arr.numberOf(i)});
 	var modes = [];
