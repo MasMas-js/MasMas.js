@@ -292,3 +292,27 @@ function getSpeedOfLight(int) {
   if (int) return (299792458);
   else return (commafy("299792458"));
 }
+
+var Router = function(){
+  this.urls = [];
+  function url(path, type, func){
+    this.path = path;
+    if(type === "GET") this.GET = func;
+    else if(type === "POST") this.POST = func;
+    this.add = function(type, func){
+      if(type === "GET") this.GET = func;
+      if(type === "POST") this.POST = func;
+    }
+  }
+  this.bind = function(path, type, func){
+    var sel = this.urls.filter(i => i.path===path)[0];
+    if(!sel) this.urls.push(new url(path, type, func))
+    else sel.add(type, func);
+  }
+  this.runRequest = function(path, type){
+    var req = this.urls.filter(i => i.path===path)[0];
+    if(!req) return 'Error 404: Not Found';
+    if(type === "GET") return req.GET();
+    else if(type === "POST") return req.POST();
+  }
+}
