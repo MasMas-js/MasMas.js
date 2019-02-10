@@ -8,7 +8,7 @@
  * Credits:
  * ~ N8Python - isFloat, isInteger, Int, Float, execute, globalVar, exists,
  * Number.prototype.A, Number.prototype.times, localStore, 
- * String.prototype.numberOf, wrap, MasMasCanvas, type, encode, decode
+ * String.prototype.numberOf, wrap, MasMasCanvas, type, encode, decode, Router
  * ~ user113716 - String.prototype.splice
  * ~ Ghostoy - commmafy
  * ~ Lavamantis - Number.prototype.round
