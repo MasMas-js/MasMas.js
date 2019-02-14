@@ -215,7 +215,7 @@ Number.prototype.round = function(places=0) {
 }
 
 String.prototype.sum = function(){
-  return this.split('').reduce((t, v) => t+Number(v), 0)
+  return this.split('').reduce(function(t, v){return t+Number(v)}, 0);
 }
 
 Number.prototype.A = function() {
