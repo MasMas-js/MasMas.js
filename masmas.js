@@ -214,6 +214,10 @@ Number.prototype.round = function(places=0) {
   return +(Math.round(this + 'e+' + places)  + 'e-' + places);
 }
 
+String.prototype.sum = function(){
+  return this.split('').reduce((t, v) => t+Number(v), 0)
+}
+
 Number.prototype.A = function() {
   var str = String(this.valueOf());
   if (str.includes('000')) {
